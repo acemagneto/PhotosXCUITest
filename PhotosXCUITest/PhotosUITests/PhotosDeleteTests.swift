@@ -10,7 +10,8 @@ import XCTest
 class PhotosDeleteTests: XCTestCase {
     private let appHelper = AppHelper()
     private var app: XCUIApplication {appHelper.app}
-    private let photos = Photos()
+    private let photosGrid = PhotosGrid()
+    private let photoDetail = PhotoDetail()
     
     override func setUpWithError() throws {
         continueAfterFailure = false
@@ -19,11 +20,11 @@ class PhotosDeleteTests: XCTestCase {
     }
     
     func testDeletingPhoto() throws {
-        photos.isDisplayed()
-        photos.selectFirstPhotoInGrid()
-        photos.deletePhoto()
-        photos.confirmDeletion()
-        photos.navigateBackToAllPhotos()
-        photos.assertPhotoDeletedFromUI()
+        photosGrid.isDisplayed()
+        photosGrid.selectFirstPhotoInGrid()
+        photoDetail.deletePhoto()
+        photoDetail.confirmDeletion()
+        photoDetail.navigateBackToPhotosGrid()
+        photosGrid.assertPhotoDeletedFromUI()
     }
 }
