@@ -13,6 +13,7 @@ class PhotoDetail: XCTestCase {
     private static let deleteButtonIdentifier = "Delete"
     private static let confirmDeletePhotoButtonIdentifier = "Delete Photo"
     private static let backButtonIdentifier = "All Photos"
+    private static let editButtonIdentifier = "Edit"
     
     func deletePhoto() {
         XCTAssert(app.buttons[PhotoDetail.deleteButtonIdentifier].waitForExistence(timeout: appHelper.timeout))
@@ -27,5 +28,9 @@ class PhotoDetail: XCTestCase {
     func navigateBackToPhotosGrid() {
         XCTAssert(app.buttons[PhotoDetail.backButtonIdentifier].exists)
         app.buttons[PhotoDetail.backButtonIdentifier].tap()
+    }
+    
+    func isDisplayed() {
+        XCTAssert(app.buttons[PhotoDetail.editButtonIdentifier].waitForExistence(timeout: appHelper.timeout))
     }
 }
