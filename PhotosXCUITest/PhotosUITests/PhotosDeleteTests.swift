@@ -20,9 +20,10 @@ class PhotosDeleteTests: XCTestCase {
     
     func testDeletingPhoto() throws {
         photos.isDisplayed()
-        photos.selectFirstPhoto()
+        photos.selectFirstPhotoInGrid()
         photos.deletePhoto()
         photos.confirmDeletion()
+        photos.navigateBackToAllPhotos()
         photos.assertPhotoDeletedFromUI()
     }
 }
