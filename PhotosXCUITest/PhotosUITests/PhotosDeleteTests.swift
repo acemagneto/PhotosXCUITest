@@ -8,19 +8,21 @@
 import XCTest
 
 class PhotosDeleteTests: XCTestCase {
+    private let appHelper = AppHelper()
+    private var app: XCUIApplication {appHelper.app}
+    private let photos = Photos()
     
     override func setUpWithError() throws {
         continueAfterFailure = false
+        // Launch Photos application
+        app.launch()
     }
     
     func testDeletingPhoto() throws {
-        // Launch Photos application
-        let photosApp = XCUIApplication(bundleIdentifier: "com.apple.mobileslideshow")
-        photosApp.launch()
-        // Delete a photo
-        Photos.selectPhoto()
-        Photos.deletePhoto()
-        // Assert photo is indeed disappeared from the UI
-        Photos.assertPhotoDeletedFromUI()
+        photos.isDisplayed()
+        photos.selectFirstPhoto()
+        photos.deletePhoto()
+        photos.confirmDeletion()
+        photos.assertPhotoDeletedFromUI()
     }
 }

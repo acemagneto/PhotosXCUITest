@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		8764556728C6261800CB1435 /* PhotosDeleteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8764556628C6261800CB1435 /* PhotosDeleteTests.swift */; };
+		8764556C28C62B3600CB1435 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8764556B28C62B3600CB1435 /* Photos.swift */; };
+		8764556E28C62CAA00CB1435 /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8764556D28C62CAA00CB1435 /* AppHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8764555C28C625A400CB1435 /* PhotosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8764556628C6261800CB1435 /* PhotosDeleteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosDeleteTests.swift; sourceTree = "<group>"; };
+		8764556B28C62B3600CB1435 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
+		8764556D28C62CAA00CB1435 /* AppHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +50,8 @@
 			isa = PBXGroup;
 			children = (
 				8764556628C6261800CB1435 /* PhotosDeleteTests.swift */,
+				8764556B28C62B3600CB1435 /* Photos.swift */,
+				8764556D28C62CAA00CB1435 /* AppHelper.swift */,
 			);
 			path = PhotosUITests;
 			sourceTree = "<group>";
@@ -119,6 +125,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8764556C28C62B3600CB1435 /* Photos.swift in Sources */,
+				8764556E28C62CAA00CB1435 /* AppHelper.swift in Sources */,
 				8764556728C6261800CB1435 /* PhotosDeleteTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
