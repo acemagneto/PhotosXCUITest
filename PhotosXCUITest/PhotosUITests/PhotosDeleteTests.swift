@@ -18,6 +18,9 @@ class PhotosDeleteTests: XCTestCase {
         let photosApp = XCUIApplication(bundleIdentifier: "com.apple.mobileslideshow")
         photosApp.launch()
         // Delete a photo
+        Photos.selectPhoto()
+        Photos.deletePhoto()
         // Assert photo is indeed disappeared from the UI
+        Photos.assertPhotoDeletedFromUI()
     }
 }
