@@ -18,10 +18,13 @@ class PhotosGrid {
     }
     
     func selectFirstPhotoInGrid() {
-        let firstPhotoInGrid = getPhotoLabelFromGrid()
-        tapFirstPhoto()
-        selectedPhoto = getPhotoName()
-        XCTAssertEqual(selectedPhoto, firstPhotoInGrid)
+        if app.collectionViews[PhotosGrid.photosGridView].cells.count > 1 {
+            let firstPhotoInGrid = getPhotoLabelFromGrid()
+            tapFirstPhoto()
+            selectedPhoto = firstPhotoInGrid
+        } else {
+            XCTFail("There are not enough photos for this test")
+        }
     }
     
     func tapFirstPhoto(){
@@ -35,11 +38,6 @@ class PhotosGrid {
     
     func getPhotoLabelFromGrid() -> String {
         let label = app.collectionViews[PhotosGrid.photosGridView].cells.firstMatch.label
-        return label
-    }
-    
-    func getPhotoName() -> String {
-        let label = app.images.firstMatch.label
         return label
     }
 }

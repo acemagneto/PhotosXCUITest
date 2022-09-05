@@ -15,13 +15,13 @@ class PhotosDeleteTests: XCTestCase {
     
     override func setUpWithError() throws {
         continueAfterFailure = false
-        // Launch Photos application
         app.launch()
     }
     
     func testDeletingPhoto() throws {
         photosGrid.isDisplayed()
         photosGrid.selectFirstPhotoInGrid()
+        photoDetail.isDisplayed()
         photoDetail.deletePhoto()
         photoDetail.confirmDeletion()
         photoDetail.navigateBackToPhotosGrid()
