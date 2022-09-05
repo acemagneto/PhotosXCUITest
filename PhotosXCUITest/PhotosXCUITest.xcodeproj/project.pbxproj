@@ -51,12 +51,36 @@
 		8764555E28C625A400CB1435 /* PhotosUITests */ = {
 			isa = PBXGroup;
 			children = (
-				8764556628C6261800CB1435 /* PhotosDeleteTests.swift */,
-				8764556B28C62B3600CB1435 /* PhotosGrid.swift */,
-				8764556F28C648B000CB1435 /* PhotoDetail.swift */,
-				8764556D28C62CAA00CB1435 /* AppHelper.swift */,
+				8764557328C64AC900CB1435 /* TestHelpers */,
+				8764557228C64AC300CB1435 /* PageObjects */,
+				8764557128C64ABD00CB1435 /* Tests */,
 			);
 			path = PhotosUITests;
+			sourceTree = "<group>";
+		};
+		8764557128C64ABD00CB1435 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				8764556628C6261800CB1435 /* PhotosDeleteTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		8764557228C64AC300CB1435 /* PageObjects */ = {
+			isa = PBXGroup;
+			children = (
+				8764556B28C62B3600CB1435 /* PhotosGrid.swift */,
+				8764556F28C648B000CB1435 /* PhotoDetail.swift */,
+			);
+			path = PageObjects;
+			sourceTree = "<group>";
+		};
+		8764557328C64AC900CB1435 /* TestHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				8764556D28C62CAA00CB1435 /* AppHelper.swift */,
+			);
+			path = TestHelpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
