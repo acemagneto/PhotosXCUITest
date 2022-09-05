@@ -7,12 +7,13 @@
 
 import XCTest
 
-class PhotoDetail: XCTestCase {
+class PhotoDetail {
     private let appHelper = AppHelper()
     private var app: XCUIApplication {appHelper.app}
     private static let deleteButtonIdentifier = "Delete"
     private static let confirmDeletePhotoButtonIdentifier = "Delete Photo"
-    private static let backButtonIdentifier = "All Photos"
+    private static let backButtonIdentifier = "BackButton"
+    private static let allPhotosIdentifier = "All Photos"
     private static let editButtonIdentifier = "Edit"
     
     func deletePhoto() {
@@ -26,8 +27,13 @@ class PhotoDetail: XCTestCase {
     }
     
     func navigateBackToPhotosGrid() {
-        XCTAssert(app.buttons[PhotoDetail.backButtonIdentifier].exists)
-        app.buttons[PhotoDetail.backButtonIdentifier].tap()
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            XCTAssert(app.buttons[PhotoDetail.allPhotosIdentifier].exists)
+            app.buttons[PhotoDetail.allPhotosIdentifier].tap()
+        } else {
+            XCTAssert(app.buttons[PhotoDetail.backButtonIdentifier].exists)
+            app.buttons[PhotoDetail.backButtonIdentifier].tap()
+        }
     }
     
     func isDisplayed() {
